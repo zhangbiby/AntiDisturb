@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AntiDisturb</string>
+    <string name="intercept_sms">短信拦截</string>
+    <string name="intercept_call">来电拦截</string>
+    <string name="intercept_balck">黑名单</string>
+    <string name="intercept_white">白名单</string>
+</resources>

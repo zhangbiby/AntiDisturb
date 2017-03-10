@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/tab_menu_height"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@drawable/tab_menu_background">
+        <RadioButton
+            android:id="@+id/sms_antidisturb"
+            style="@style/TabMenuStyle"
+            android:drawableTop="@drawable/sms_background"
+            android:text="@string/intercept_sms"/>
+        <RadioButton
+            android:id="@+id/call_antidisturb"
+            style="@style/TabMenuStyle"
+            android:drawableTop="@drawable/call_background"
+            android:text="@string/intercept_call"/>
+        <RadioButton
+            android:id="@+id/blacknum_antidisturb"
+            style="@style/TabMenuStyle"
+            android:drawableTop="@drawable/black_background"
+            android:text="@string/intercept_balck"/>
+        <RadioButton
+            android:id="@+id/whitenum_antidisturb"
+            style="@style/TabMenuStyle"
+            android:drawableTop="@drawable/white_background"
+            android:text="@string/intercept_white"/>
+
+    </RadioGroup>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/radioGroup"></android.support.v4.view.ViewPager>
+</RelativeLayout>
