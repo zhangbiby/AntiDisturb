@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+    android:layout_height="@dimen/title_height"
+    android:background="@drawable/title_background"
+    android:orientation="horizontal"
+    android:paddingBottom="5dip"
+    android:paddingTop="5dip">
+    <Button
+        android:id="@+id/textLeft"
+        style="@style/ActivityTitleSideText"
+        android:layout_width="@dimen/title_button_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:text="@string/delete" />
+
+    <TextView
+        android:id="@+id/textCenter"
+        style="@style/ActivityTitleCenterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/textRight"
+        style="@style/ActivityTitleSideText"
+        android:layout_width="@dimen/title_button_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:text="@string/setting" />
+
+
+</RelativeLayout>

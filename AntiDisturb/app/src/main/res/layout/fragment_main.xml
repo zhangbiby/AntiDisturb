@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/app_name"/>
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_background"
+    android:orientation="vertical"
+    >
+
+    <include
+        android:id="@+id/titleLayout"
+        layout="@layout/title_fragment" />
+
+    <include
+        android:id="@+id/bottomLayout"
+        layout="@layout/bottom_fragment" />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomLayout"
+        android:layout_below="@id/titleLayout"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:animationCache="@null"
+        android:background="@drawable/all_background"
+        android:divider="@drawable/line"
+        android:listSelector="#00000000"
+        android:scrollbars="none"/>
+</RelativeLayout>
