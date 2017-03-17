@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_background"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+  
+    <LinearLayout
+        android:id="@+id/rightLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/CommonTimeText" />
+        <ImageView
+            android:id="@+id/deleteImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/delete_0"/>
+        <CheckBox
+            android:id="@+id/deleteCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:button="@null"
+            android:background="@drawable/delete_checkbox_background"
+            android:visibility="gone" />
+    </LinearLayout>
+     <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="match_parent"
+       android:layout_centerVertical="true"
+       android:layout_toLeftOf="@id/rightLayout"
+       android:gravity="center_vertical"
+       android:orientation="vertical">
+         <TextView
+             android:id="@+id/phoneNumText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:gravity="center_vertical"
+             style="@style/CommonPhoneNumText"/>
+
+         <TextView
+             android:id="@+id/contentText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:maxWidth="200dip"
+             android:singleLine="true"
+             style="@style/CommonNumInfoText"
+             android:visibility="gone" />
+   </LinearLayout>
+</RelativeLayout>

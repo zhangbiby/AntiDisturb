@@ -37,6 +37,22 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="CommonTimeText">
+        <item name="android:textColor">#656565</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="CommonPhoneNumText">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="CommonNumInfoText">
+        <item name="android:textColor">#656565</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
     <dimen name="tab_menu_margin">7dip</dimen>
     <dimen name="tab_menu_textsize">28px</dimen>
 </resources>
