@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -27,6 +28,7 @@ import antidisturb.bd.com.antidisturb.provider.DataObserver;
  */
 public class FragmentHelper implements ListViewStateChangeListener, PhoneNumAsyncListener,InterceptInfoAsyncListener {
 
+    private static final String TAG = "FragmentHelper_isrefluxer";
     public static final int FRAGMENT_SMS = 1;
     private Fragment fragment;
     private int theFragmentType;// the data input
@@ -135,6 +137,7 @@ public class FragmentHelper implements ListViewStateChangeListener, PhoneNumAsyn
         if(resultList != null){
             interceptList.clear();
             interceptList = resultList;
+            Log.i(TAG,"onQuerySmsComplete:"+interceptList.size());
             listViewHelper.setDataToShow(interceptList);
         }
     }

@@ -14,6 +14,7 @@ import java.util.List;
 import antidisturb.bd.com.antidisturb.bean.InterceptInfo;
 import antidisturb.bd.com.antidisturb.listener.InterceptInfoAsyncListener;
 import antidisturb.bd.com.antidisturb.provider.InterceptInfoProvider;
+import antidisturb.bd.com.antidisturb.receiver.InterceptReceiver;
 import antidisturb.bd.com.antidisturb.util.Constant;
 import antidisturb.bd.com.antidisturb.util.Contact;
 import antidisturb.bd.com.antidisturb.util.MyProgressDialog;
@@ -50,6 +51,8 @@ public class InterceptInfoHelper extends AsyncQueryHandler {
         resultList = new ArrayList<InterceptInfo>();
     }
 
+
+
     public void querySms(int pageNum) {
         progressDialog.show();
         selection = InterceptInfoProvider.COLUMN_TYPE+" = ?";
@@ -85,5 +88,20 @@ public class InterceptInfoHelper extends AsyncQueryHandler {
             cursor.close();
         if(progressDialog != null && progressDialog.isShowing())
             progressDialog.dismiss();
+    }
+
+    public void insertDB(InterceptInfo info) {
+        db.beginTransaction();  //
+        try {
+            db.execSQL("INSERT INTO "+DBHelper.TABLE_2_NAME+" VALUES(null ,?, ?, ?, ?, ?)",
+                    new String[]{Constant.convertPhoneNum(info.getItemNum()),info.getItemName(),info.getItemInfo(),String.valueOf(info.getTime()),String.valueOf(info.getType())});
+            db.setTransactionSuccessful();  //
+            notifyDataChanged();
+        } finally {
+            db.endTransaction();    //
+        }
+    }
+    private void notifyDataChanged() {
+        contentResolver.notifyChange(InterceptInfoProvider.NOTIFY_URI, null);
     }
 }
